@@ -45,3 +45,12 @@ export const fetchGetCreditsById = async (movieId) => {
   );
   return response.data.results;
 };
+
+
+export const fetchGetMoviesByQuery = async (q) => {
+  const response = await axios.get(
+    `https://api.themoviedb.org/3/search/movie?include_adult=false&language=en-US&page=1&query=${q}`,
+    options
+  );
+  return response.data.results;
+};

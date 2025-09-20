@@ -7,6 +7,8 @@ import Header from "./components/Header";
 import MovieSearch from "./pages/MovieSearch";
 import Reviews from "./components/Reviews";
 import Cast from "./components/Cast";
+import NotFound from "./pages/NotFound";
+
 
 function App() {
 
@@ -24,6 +26,9 @@ function App() {
             <Route path="/movies/:movieId/cast" element={<Cast/>}></Route>
 
           </Route>
+
+          <Route path="*" element={<NotFound/>}></Route>
+
         </Route>
 
 
