@@ -1,13 +1,29 @@
 
 import { Routes, Route } from "react-router-dom";
+import { lazy } from "react";
 // import TrendMovie from "./components/TrendList";
-import Trends from "./pages/Trends";
-import MoviePage from "./pages/MoviePage";
-import Header from "./components/Header";
-import MovieSearch from "./pages/MovieSearch";
-import Reviews from "./components/Reviews";
-import Cast from "./components/Cast";
-import NotFound from "./pages/NotFound";
+
+// import Trends from "./pages/Trends";
+const Trends = lazy(() => import("./pages/Trends"))
+
+// import MoviePage from "./pages/MoviePage";
+const MoviePage = lazy(() => import("./pages/MoviePage"))
+
+// import Header from "./components/Header";
+const Header = lazy(() => import("./components/Header"))
+
+// import MovieSearch from "./pages/MovieSearch";
+const MovieSearch = lazy(() => import("./pages/MovieSearch"))
+
+// import Reviews from "./components/Reviews";
+const Reviews = lazy(() => import("./components/Reviews"))
+
+// import Cast from "./components/Cast";
+const Cast = lazy(() => import("./components/Cast"))
+
+// import NotFound from "./pages/NotFound";
+const NotFound = lazy(() => import("./pages/NotFound"))
+
 
 
 function App() {

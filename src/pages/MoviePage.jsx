@@ -1,5 +1,5 @@
 import { fetchGetMovieById } from "../services/movieApi";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "../styles/moviePage.css";
 import { Link } from "react-router-dom";
@@ -9,6 +9,7 @@ export default function MoviePage() {
   const [movie, setMovie] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const { movieId } = useParams();
+  const location = useLocation()
 
 
   useEffect(() => {
@@ -25,11 +26,13 @@ export default function MoviePage() {
     getMovie();
   }, [movieId]);
 
-  console.log(movie);
+  // console.log(movie);
+  console.log(location);
+  
 
   return (
     <main>
-        <Link className="backLink" to='/'> &lt;- Go back</Link>
+        <Link className="backLink" to={location.state?.from}> &lt;- Go back</Link>
       {isLoading ? (
         <p>Loading...</p>
       ) : (
